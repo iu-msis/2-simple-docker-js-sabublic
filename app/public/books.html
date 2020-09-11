@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The best Books</title>
+    <!-- Required meta tags -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!-- my custom CSS goes here -->
+   <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="books.html">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="athletes.html">Athletes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    </br>
+    </br>
+    <h2 id="customHeader"> New York Times Best Sellers </h2>
+    <table id ="taskTable">
+      <thead>
+      <tr>
+        <th> Title </th>
+        <th> Author </th>
+        <th> Year Published </th>
+        <th> Publisher </th>
+        <th> Page Count </th>
+        <th> MSRP </th>
+      </tr>
+      </thead>
+      <tr>
+        <td> Untamed </td>
+        <td> Glennon Doyle </td>
+        <td> 2020 </td>
+        <td> The Dial Press </td>
+        <td> 302 </td>
+        <td> $14.99 </td>
+      </tr>
+      <tr>
+        <td> Hawk </td>
+        <td> James Patterson </td>
+        <td> 2020 </td>
+        <td> Jimmy Patterson </td>
+        <td> 416 </td>
+        <td> $18.99 </td>
+      </tr>
+      <tr>
+        <td> Wonder </td>
+        <td> R J. Palacio </td>
+        <td> 2012 </td>
+        <td> Knopf Books for Young Readers </td>
+        <td> 320 </td>
+        <td> $16.99 </td>
+      </tr>
+      <tr>
+        <td> Refugee </td>
+        <td> Alan Gratz </td>
+        <td> 2017 </td>
+        <td> Scholastic Press </td>
+        <td> 352 </td>
+        <td> $16.99 </td>
+      </tr>
+      <tr>
+        <td> 28 Summers </td>
+        <td> Elin Hilderbrand </td>
+        <td> 2020 </td>
+        <td> Little, Brown and Company </td>
+        <td> 432 </td>
+        <td> $14.99 </td>
+      </tr>
+    </table>
+    </br>
+    </br>
+    <h2>Input a Book</h2>
+    <form action="/action_page.php">
+      <label for="fname">Title:</label><br>
+      <input type="title" id="fname" name="fname" value=""><br>
+      <label for="lname">Author:</label><br>
+      <input type="title" id="lname" name="lname" value=""><br>
+      <label for="fname">Year Published:</label><br>
+      <input type="title" id="fname" name="fname" value=""><br>
+      <label for="fname">Publisher:</label><br>
+      <input type="title" id="fname" name="fname" value=""><br>
+      <label for="fname">Page Count:</label><br>
+      <input type="title" id="fname" name="fname" value=""><br>
+      <label for="lname">MSRP:</label><br>
+      <input type="title" id="lname" name="lname" value=""><br><br>
+      <input type="submit" value="Submit">
+      <input type="reset">
+    </form>
+    <a target="_blank" href="images/nyc.png">
+    <img src="images/nyc.png" alt="png" class = "ncy" style=  width="250" height="300" "border:5px solid black">
+    <p>https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nytimes.com%2Fbooks%2Fbest-sellers%2F&psig=AOvVaw3lW8akU2N0tbrtWITpzsU2&ust=1599270968504000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKiDwOGyzusCFQAAAAAdAAAAABAF</p>
+    <script src="js/tablesort.min.js"></script>
+    <script>
+    // Tablesort plug in from http://tristen.ca/tablesort/demo/
+      new Tablesort(document.getElementById('taskTable'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+
+Body {
+  background-color: #D2D6E3;
+  color: #454546;
+  h2: #05057A;
+  li
+
+}
+#customHeader {
+  border: 1px solid blue;
+}
+.introName{
+  text-decoration-line: underline;
+  text-decoration-color: #F6CEE3;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+  align: center;
+  border: 1px solid black;
+}
+
+.nyc {
+  position: relative;
+  top: 500px;
+  right: 150px;
+
+}
+
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+/* Found how to do color code from looking at an example on w3 */
+tr:nth-child(even) {
+  background-color: #eee;
+}
+tr:nth-child(odd) {
+ background-color: #ccccff;
+}
+th {
+  background-color: #000080;
+  color: white;
+}
+/* rest of css is for profile card from (made a few changes) w3schools https://www.w3schools.com/howto/howto_css_profile_card.asp */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+
+/** table sort **/
+th[role=columnheader]:not(.no-sort) {
+	cursor: pointer;
+  caret-color: white;
+}
+
+th[role=columnheader]:not(.no-sort):after {
+	content: '';
+	float: right;
+	margin-top: 7px;
+	border-width: 0 4px 4px;
+	border-style: solid;
+	border-color: #E0E6F8 transparent;
+	visibility: hidden;
+	opacity: 0;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+  color: white;
+}
+
+th[aria-sort=ascending]:not(.no-sort):after {
+	border-bottom: none;
+	border-width: 4px 4px 0;
+  color: white;
+}
+
+th[aria-sort]:not(.no-sort):after {
+	visibility: visible;
+	opacity: 0.4;
+  color: white;
+}
+
+th[role=columnheader]:not(.no-sort):hover:after {
+	visibility: visible;
+  color: white;
+	opacity: 1;
+}
+© 2020 GitHub, Inc.
