@@ -13,14 +13,13 @@
    <!-- my custom CSS goes here -->
    <link rel="stylesheet" href="css/styles.css">
 
-   <!-- Optional JavaScript -->
-   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+   </script>
 
   </head>
   <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,13 +42,25 @@
     </br>
     </br>
     <!-- used profile card from w3schools https://www.w3schools.com/howto/howto_css_profile_card.asp -->
-    <div class="card">
-      <img src="images/andre.jpg" alt="andre" style="width:100%">
-      <h1 class="introName">Ron Williams</h1>
-      <p class="title">Kazakhstan</p>
-      <p>Born: 3/20/1975</p>
-      <p>Age: 45</p>
-      <p> Email:<a href="mailto:ron.will@gmail.com">ron.will@gmail.com</a></p>
+
+    <div class="card" id="userProfile">
+
+      <a v-bind:href="userImgLarge">
+        <img v-bind:src="userImgLarge">
+      </a>
+
+      <h1 class="introName">{{userName}}</h1>
+      <h4 class="title">{{userCountry}}</h4>
+      <h4>Born: {{userBirthday}}</h4>
+      <h4>Age: {{userAge}}</h4>
+      <p> Email:<a v-bind:href=" 'mailto:' + userEmail"> {{userEmail}}</a></p>
     </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="js/profile.app.js"></script>
   </body>
 </html>
