@@ -54,7 +54,33 @@
       <h4>Born: {{userBirthday}}</h4>
       <h4>Age: {{userAge}}</h4>
       <p> Email:<a v-bind:href=" 'mailto:' + userEmail"> {{userEmail}}</a></p>
+      <!-- found method how to reload using java from user click on this site https://www.htmlgoodies.com/tutorials/getting_started/article.php/3479551/reloading-the-page.htm -->
+      <a href="javascript:history.go(0)"></a>
+      <form>
+        <input type="button" onclick="history.go(0)" value="Fresh Profile">
+      </form>
     </div>
+    <form action="" method="post" v-on:submit.prevent="handleCreatePatient">
+      <div class="form-group">
+        <label for="newPtFirstName"> First Name</label>
+        <input type="text" class="form-control" id="newPtFirstName" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="newPtLastName"> Last Name</label>
+        <input type="text" class="form-control" id="newPtLastName" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="newPtDOB"> DOB</label>
+        <input type="text" class="form-control" id="newPtDOB" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="newPtSex"> Sex</label>
+        <input type="text" class="form-control" id="newPtSex" placeholder="">
+      </div>
+
+
+
+    </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
