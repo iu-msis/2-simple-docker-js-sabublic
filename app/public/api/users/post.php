@@ -19,16 +19,13 @@ $db = DbConnection::getConnection();
 // Step 2: Create & run the query
 // Note the use of parameterized statements to avoid injection
 $stmt = $db->prepare(
-  'INSERT INTO Comments (id, commentText)
-  VALUES (?, ?)'
+  'INSERT INTO Comments (commentText)
+  VALUES (?)'
 );
 
 $stmt->execute([
   $guid,
-  $_POST['firstName'],
-  $_POST['lastName'],
-  $_POST['dob'],
-  $_POST['sexAtBirth']
+  $_POST['commentText']
 ]);
 
 // If needed, get auto-generated PK from DB

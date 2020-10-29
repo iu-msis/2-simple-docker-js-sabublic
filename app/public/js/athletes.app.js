@@ -1,26 +1,36 @@
 athletes = new Vue({
-  el: '#athletesapp',
-  comments: {
-    id:'',
-    commentText: ''
-    },
-    newPtForm: {}
-  },
-  computed: {
-    activePtName() {
-      return this.activePt ? this.activePt.lastName + ', ' + this.activePt.firstName : ''
+  el: "#athletesPage",
+  data:{
+    comments:[{
+      id:'',
+      commentText: ''
+  }],
+    newComment: {
+      id:'',
+      commentText:''
     }
   },
+  created() {
+    this.fetchComments();
+  },
+
   methods: {
-    newPtData() {
-      return {
-        firstName: "",
-        lastName: "",
-        dob: "",
-        sexAtBirth: ""
-      }
+    fetchComments() {
+      fetch('api/comments/index.php')
+      .then(response => response.json())
+      .then(json => {
+        this.comments=json;
+        console.log(this.comments);
+      });
     },
-    handleNewPtForm( evt ) {
+    //   return {
+    //     firstName: "",
+    //     lastName: "",
+    //     dob: "",
+    //     sexAtBirth: ""
+    //   }
+    // },
+    // handleNewPtForm( evt ) {
       // evt.preventDefault();  // Redundant w/ Vue's submit.prevent
 
       // TODO: Validate the data
@@ -52,14 +62,30 @@ athletes = new Vue({
 //
 //     }
 //   },
-//   created() {
-//     fetch("api/records/")
-//     .then( response => response.json() )
-//     .then( json => {
-//       this.ptList = json;
-//
-//       console.log(json)}
-//     );
-//     this.newPtForm = this.newPtData();
-//   }
-// })
+
+
+  createComment() {
+    fetch('api/comments/index.php', {
+      method: 'POST',
+          body: JSON.stringify(this.newComment),
+          headers: {
+            "Content-Type":"application/json; charset=utf-8"
+          }
+        })
+    .then( response => response.json())
+    .then( json => {
+      console.log("Returned from post:",json);
+        this.comments = json;
+        this.newComment = this.newCommentData();
+      });
+      console.log("Creating (POSTing)...!");
+      console.log(this.newComment);
+    },
+  newCommentData() {
+    return {
+      id:"",
+      commentText: ""
+    }
+  }
+},
+});

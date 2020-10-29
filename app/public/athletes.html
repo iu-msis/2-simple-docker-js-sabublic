@@ -15,10 +15,12 @@
 
      <!-- Optional JavaScript -->
      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+     <script src="js/athletes.app.js"></script>
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -89,15 +91,39 @@
     </table>
     </br>
 
-    <div id="athletesapp">
+
       <div class="container-fluid">
-        <div class="row">
+        <div class="row" id="athletesPage">
+        <div class"col-lg-3 col-md-3 col-sm-3 col-ex-3">
+          <table class ='table' id = 'commentTable' boarder='1px'>
+            <thread>
+              <tr>
+                <th scope = 'col'> Comment ID </th>
+                <th scope = 'col'> Comment Text </th>
+              </tr>
+            </thread>
+            <tbody id="commentTable">
+              <tr class="commentpage" v-for="comment in comments">
+                <td> {{ comment.id }}</td>
+                <td> {{ comment.commentText }}</td>
+              </tr>
+            </tbody>
+          </table>
 
-
-
+          <div>
+            <form id='newCommentForm' v-on:submit.prevent="createComment()">
+              <div class="Comment">
+                <label for"commentText"> Comment Text </label>
+                <input type="text" v-model="newComment.commentText" class="form-control" id="commentText" placeholder="Put Comments Here">
+              </div><br/>
+              <input type="submit" id='submitNewComment' value="Create Comment" class="button">
+            </form>
         </div>
-      <div>
+      </div>
     </div>
+  </div>
+
+
 
 
 
@@ -105,6 +131,6 @@
       <a target="_blank" href="images/lebron.jpg">
     <img src="images/lebron.jpg" alt="lebron" class="center" style= width="200" height="325">
     <p>https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.discoverlosangeles.com%2Fthings-to-do%2Fthe-guide-to-lebron-james-los-angeles&psig=AOvVaw0WKaL8d6AK3jcitcbX0eOS&ust=1599271176930000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJih5MazzusCFQAAAAAdAAAAABAD"</p>
-
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </body>
 </html>
